@@ -334,8 +334,11 @@ How many annotated proteins prokka find in the contigs? Does it make sense? Prov
 #Since bacteria doesnt have introns, the number of annotated proteins should be equal to the number of CDS features in the GFF3 file. I will count the number of lines with "CDS".
 ```shell
 # Command to estimate the number of proteins
+grep ">" Annot_Assembly/Assembly_prokka.faa | wc -l
+#8685
 grep "CDS" Annot_Assembly/Assembly_prokka.gff | wc -l
 #8685
+
 ```
 Thus, you have run all the steps for the analysis. Now just close the container by typing:
 ```shell
@@ -348,7 +351,7 @@ You will see that the bash prompt will be back to blinking indicating. Do not wo
 #Git repo
 
 git init
-git add README.md
+git add Readme.md
 git commit -m "first commit"
 git branch -M main
 git remote add origin git@github.com:kavyasekarsusitha/Assignment_2_Genome_Analytics.git
